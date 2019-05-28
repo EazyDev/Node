@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+            <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    </head>
+    <body>
+        <input type="button" value="send!" onclick="send()">
+        <input id="name" type="text" placeholder="name">
+        <input id="city" type="text" placeholder="city">
+        <input id="alias" type="text" placeholder="alias">
+        <script>
+            var send = function() {
+                var namejs = document.getElementById('name').value;
+                var cityjs = document.getElementById('city').value;
+                var aliasjs = document.getElementById('alias').value;
+                console.log(namejs,cityjs,aliasjs);
+                axios.post('http://localhost:3000/users',{
+                    "name" : namejs,
+                    "city" : cityjs,
+                    "alias": aliasjs
+                }).then(function (response){
+                    console.log(response);
+                }).catch(function (error){
+                    console.log(error);
+                });                
+            }
+        </script>
+    </body>
+</html>
