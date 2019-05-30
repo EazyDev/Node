@@ -1,8 +1,18 @@
 const express = require('express'); //documentation check
 const morgan = require('morgan'); // documentation check
 const parser = require('body-parser');
+const mongoose = require('mongoose');
 const app = express();
 const port = 3000;
+
+mongoose.connect("mongodb+srv://Salman:qwerty123@victorcluster-6cqju.mongodb.net/test?retryWrites=true",function(err){
+    if(err){
+        console.log(err);
+    }
+    else{
+        console.log("Atlas is connected");
+    }
+});
 
 const users = require('./routes/users');
 const products = require('./routes/products');
