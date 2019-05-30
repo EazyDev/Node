@@ -13,10 +13,10 @@ router.post('/',function(req,res){
     // console.log(res.body);
     // res.json(req.body).status(200);
     const newUser = new userModel({
-            _id : new mongoose.Types.ObjectId(),
-            name : res.body.name,
-            email : res.body.email,
-            password : bcryptjs.hashSync(res.body.password,10)
+            _id : new mongoose.Types.ObjectId,
+            name : req.body.name,
+            email : req.body.email,
+            password : bcryptjs.hashSync(req.body.password,10)
     });
 
     userModel.find({email:req.body.email})
@@ -37,3 +37,4 @@ router.post('/',function(req,res){
 
 
 module.exports = router;
+

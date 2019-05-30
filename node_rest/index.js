@@ -1,7 +1,8 @@
 const express = require('express'); //documentation check
 const morgan = require('morgan'); // documentation check
 const parser = require('body-parser');
-const mongoose = require('mongoose');
+const mongoose = require('mongoose'); // MongoDB
+
 const app = express();
 const port = 3000;
 
