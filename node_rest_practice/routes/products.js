@@ -5,4 +5,6 @@ router.get('/',function(req,res){
     res.send("Products Home - Put products here").status(200);
 });
 
+router.post('/')
+
 module.exports = router;

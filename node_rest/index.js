@@ -17,6 +17,7 @@ mongoose.connect("mongodb+srv://Salman:qwerty123@victorcluster-6cqju.mongodb.net
 
 const users = require('./routes/users');
 const products = require('./routes/products');
+const orders = require('./routes/orders');
 
 app.use(morgan('dev'));
 
@@ -31,6 +32,7 @@ app.use('*',function(req,res,next){
 
 app.use('/users',users);
 app.use('/products',products);
+app.use('/orders',orders);
 
 // let count = 0;
 //We add the middleware - dev is the type of data?
